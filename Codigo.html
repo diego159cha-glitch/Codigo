@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="video-section">
+        <h1>Mira nuestro primer video</h1>
+        <video controls>
+            <source src="Grabación de pantalla 2026-04-29 183334.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+    </section>
+
+    <section class="video-section" style="background-color: #1a1a1a;">
+        <h1>Aprende más aquí</h1>
+        <video controls>
+            <source src="Grabación de pantalla 2026-04-29 183600.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+    </section>
+
+    <section class="registro-section">
+        <div class="formulario">
+            <h2>¡Regístrate ahora!</h2>
+            <p>Déjanos tus datos para continuar.</p>
+            <form id="registroForm">
+                <input type="text" id="nombre" placeholder="Tu nombre completo" required>
+                <input type="email" id="email" placeholder="Tu correo electrónico" required>
+                <button type="submit">Guardar mis datos</button>
+            </form>
+            <div id="confirmacion" style="display:none; color: green; margin-top: 20px;">
+                ¡Registro exitoso! Bienvenido.
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Manejo del formulario
+        const form = document.getElementById('registroForm');
+        const confirmacion = document.getElementById('confirmacion');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); // Evita que la página se recargue
+            const nombre = document.getElementById('nombre').value;
+            
+            // Simulación de guardado
+            console.log("Nombre guardado: " + nombre);
+            
+            form.style.display = 'none';
+            confirmacion.style.display = 'block';
+            confirmacion.innerHTML = `<h3>¡Gracias, ${nombre}!</h3> Tu registro se ha guardado.`;
+        });
+    </script>
+</body>
+</html>
